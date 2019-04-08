@@ -512,7 +512,10 @@ before packages are loaded."
                                                                      auto-completion-tab-key-behavior 'cycle
                                                                      auto-completion-complete-with-key-sequence jk
                                                                      auto-completion-complete-with-key-sequence-delay 0.1
-                                                                     auto-completion-private-snippets-directory nil)
+                                                                     auto-completion-private-snippets-directory nil
+                                                                     auto-completion-enable-snippets-in-popup t
+                                                                     auto-completion-enable-help-tooltip t
+                                                                     auto-completion-enable-sort-by-usage t)
                                                     ))
 ;;  (setq-default dotspacemacs-configuration-layers
 ;;                '(
