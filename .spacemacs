@@ -497,6 +497,9 @@ before packages are loaded."
   ;(add-to-list `auto-mode-alist `("\\.re\\'" . reason-mode))
   (add-to-list `auto-mode-alist `("\\.ml\\'" . tuareg-mode))
 
+  ;; toggle holy-mode using the <f9> key, SO THAT I CAN LEAVE FUCKING HOLY MODE.
+  (global-set-key (kbd "C-<f9>") 'holy-mode)
+
   ;; :q should kill the current buffer rather than quitting emacs entirely
   (evil-ex-define-cmd "q" 'kill-this-buffer)
   ;; :wq will just save the buffer and NOT quit.  This isn't exactly what i want, but works better for now.
