@@ -40,7 +40,6 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completin
      ;; better-defaults
      emacs-lisp
      multiple-cursors
@@ -507,6 +506,14 @@ before packages are loaded."
   (evil-ex-define-cmd "quit" 'evil-quit)
 
   ;; auto-complete default setup: https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bcompletion/auto-completion
+  (setq-default dotspacemacs-configuration-layers '(
+                                                    (auto-completion :variables
+                                                                     auto-completion-return-key-behavior 'complete
+                                                                     auto-completion-tab-key-behavior 'cycle
+                                                                     auto-completion-complete-with-key-sequence jk
+                                                                     auto-completion-complete-with-key-sequence-delay 0.1
+                                                                     auto-completion-private-snippets-directory nil)
+                                                    ))
 ;;  (setq-default dotspacemacs-configuration-layers
 ;;                '(
 ;;                  (auto-completion :variables
