@@ -60,7 +60,7 @@ This function should only modify configuration layer settings."
      ruby
      elixir
      javascript
-     ocaml
+     ;;ocaml
      html
      yaml
      typescript
@@ -504,6 +504,12 @@ before packages are loaded."
   (evil-ex-define-cmd "q" 'kill-this-buffer)
   ;; :wq will just save the buffer and NOT quit.  This isn't exactly what i want, but works better for now.
   (evil-ex-define-cmd "wq" 'save-buffer)
+
+  (evil-ex-define-cmd "n" 'next-buffer)
+  (evil-ex-define-cmd "N" 'previous-buffer)
+
+  ;; OK so this might now be exactly what "rew" should be but I don't think I'd be upset with it.
+  (evil-ex-define-cmd "rew" 'spacemacs/switch-to-scratch-buffer)
 
   ;; Need to type out :quit to close emacs
   (evil-ex-define-cmd "quit" 'evil-quit)
