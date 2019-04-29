@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : fpa
+#key : fpa
+#contributor : jgriffin
+# --
+file_put_contents('logs/devLog.log', "\n jgriffin HERE " . (preg_replace('/.*\//', '', __FILE__))  . ":".__LINE__.") {${$1:variable}} : ".print_r(\${$1}, true), FILE_APPEND);
+Resolving deltas: 100% (129/129), done.
+giFrom git.movehq.com:PHP/moveHQ

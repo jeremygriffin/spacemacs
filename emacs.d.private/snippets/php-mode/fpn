@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : fpn
+#key : fpn
+#contributor : jgriffin
+# --
+file_put_contents('logs/devLog.log', "\n jgriffin HERE " . preg_replace('/.*\//', '', __FILE__)  . ":".__LINE__.")", FILE_APPEND);
