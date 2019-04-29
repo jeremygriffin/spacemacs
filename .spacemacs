@@ -81,7 +81,8 @@ This function should only modify configuration layer settings."
                       ;;auto-completion-enable-sort-by-usage t
                       )
      better-defaults
-     git
+     (git :variables
+          git-gutter-use-fringe t)
      org
      version-control
      gnus
@@ -357,17 +358,17 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 90
+   dotspacemacs-active-transparency 80
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 90
+   dotspacemacs-inactive-transparency 80
 
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
@@ -513,6 +514,16 @@ before packages are loaded."
 
   ;; toggle holy-mode using the <f9> key, SO THAT I CAN LEAVE FUCKING HOLY MODE.
   (global-set-key (kbd "C-<f9>") 'holy-mode)
+
+  ;; Evaluate these five bindings I think I want them but i'm not sure how.
+  (global-set-key (kbd "C-M-(") 'spacemacs/toggle-transparency)
+  (global-set-key (kbd "C-(") 'spacemacs/increase-transparency)
+  (global-set-key (kbd "C-)") 'spacemacs/decrease-transparency)
+
+  ;; kbd for multiple cursors
+  ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  ;; (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 
   ;; :q should kill the current buffer rather than quitting emacs entirely
   (evil-ex-define-cmd "q" 'kill-this-buffer)
